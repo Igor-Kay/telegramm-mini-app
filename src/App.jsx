@@ -10,8 +10,8 @@ const GameCard = ({ name, price, description, photos, exchangeRate }) => {
   const priceInRubles = (numericPrice * exchangeRate).toFixed(2);
 
   return (
-    <div className="gameCardBox bg-white shadow mb-4">
-      <img src={photos} alt={name} className="w-full h-fit object-cover" />
+    <div className="gameCardBox bg-white  shadow mb-4">
+      <img src={photos} alt={name} className="w-full h-fit object-cover " />
       <div className="p-4">
         <h3 className=" gameName font-medium text-gray-900 mb-2">{name}</h3>
         <div className="flex items-center justify-between">
