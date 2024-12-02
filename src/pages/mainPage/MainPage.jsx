@@ -73,7 +73,7 @@ const MainPage = ({ cart, setCart }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://5.35.13.32:8080/data");
+        const response = await fetch("https://5.35.13.32:8080/data");
         const data = await response.json();
         if (data && data.games) {
           setGames(data.games);
