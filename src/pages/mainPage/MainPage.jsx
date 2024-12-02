@@ -73,7 +73,7 @@ const MainPage = ({ cart, setCart }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://0a94-85-140-161-220.ngrok-free.app/data");
+        const response = await fetch("http://5.35.13.32:8080/data");
         const data = await response.json();
         if (data && data.games) {
           setGames(data.games);
@@ -131,7 +131,9 @@ const MainPage = ({ cart, setCart }) => {
         <div className="text-xl font-bold">Nexy</div>
         <div className="flex gap-4">
           <Link to="/profile">
-            <img src={ProfileIcon} alt="Профиль" />
+            <div className="profileBox">
+              <img src={ProfileIcon} alt="Профиль" />
+            </div>
           </Link>
           <button onClick={() => navigate("/cart")} className="cart-btn">
             Корзина ({cart.length})
