@@ -14,7 +14,7 @@ const GameCard = ({
   addToCart,
   isInCart,
 }) => {
-  const cleanPrice = price.replace("€", "").replace(",", ".");
+  const cleanPrice = price;
   const numericPrice = parseFloat(cleanPrice);
   const priceInRubles = (numericPrice * exchangeRate).toFixed(2);
 
