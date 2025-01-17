@@ -1,63 +1,12 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import axios from "axios";
 import ProfileIcon from "../../assets/profileIcon.svg";
 import { Link, useNavigate } from "react-router-dom";
+import GameCard from "../../components/GameCard/GameCard";
+import Slider from "../../components/Slider/Slider";
 import "./MainPage.scss";
-
-const GameCard = ({
-  name,
-  price,
-  description,
-  photos,
-  exchangeRate,
-  addToCart,
-  isInCart,
-}) => {
-  const cleanPrice = price;
-  const numericPrice = parseFloat(cleanPrice);
-  const priceInRubles = (numericPrice * exchangeRate).toFixed(2);
-
-  return (
-    <div className="gameCardBox bg-white shadow mb-4">
-      <img src={photos} alt={name} className="w-full h-fit object-cover" />
-      <div className="p-4">
-        <h3 className="gameName font-medium text-gray-900 mb-2">{name}</h3>
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-blue-500 font-bold">
-              {priceInRubles} руб.
-            </span>
-          </div>
-        </div>
-        <button
-          onClick={() =>
-            addToCart({ name, price: priceInRubles, description, photos })
-          }
-          className={`shopCardBox w-full py-2 px-4 rounded-lg ${
-            isInCart
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-blue-500 hover:bg-blue-600 text-white"
-          }`}
-          disabled={isInCart}
-        >
-          {isInCart ? "Добавлено" : "В корзину"}
-        </button>
-      </div>
-    </div>
-  );
-};
-
-const TabButton = ({ children, active, onClick }) => (
-  <button
-    onClick={onClick}
-    className={`px-4 py-2 rounded-lg ${
-      active ? "bg-blue-500 text-white" : "bg-gray-100 text-gray-700"
-    } font-medium text-sm`}
-  >
-    {children}
-  </button>
-);
 
 const MainPage = ({ cart, setCart }) => {
   const [activeTab, setActiveTab] = useState("games");
@@ -73,7 +22,7 @@ const MainPage = ({ cart, setCart }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://nexy.fun/data");
+        const response = await fetch("http://127.0.0.1:8080/data");
         const data = await response.json();
         if (data && data.games) {
           setGames(data.games);
@@ -152,34 +101,14 @@ const MainPage = ({ cart, setCart }) => {
         <Search className="absolute left-3 top-3.5 text-gray-400" size={20} />
       </div>
 
-      <div className="flex gap-2 mb-6">
-        <TabButton
-          active={activeTab === "games"}
-          onClick={() => setActiveTab("games")}
-        >
-          ИГРЫ ЗА 50%
-        </TabButton>
-        <TabButton
-          active={activeTab === "psplus"}
-          onClick={() => setActiveTab("psplus")}
-        >
-          PS PLUS ЗА 50%
-        </TabButton>
-        <TabButton
-          active={activeTab === "account"}
-          onClick={() => setActiveTab("account")}
-        >
-          ЛИЧНЫЙ АКК
-        </TabButton>
-      </div>
+      <Slider
+        games={filteredGames}
+        exchangeRate={exchangeRate}
+        addToCart={addToCart}
+        cart={cart}
+      />
 
-      {loading && (
-        <div className="text-center py-4 text-gray-500">Загрузка игр...</div>
-      )}
-
-      {error && <div className="text-red-500 mb-4 text-center">{error}</div>}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
         {!loading && filteredGames.length > 0
           ? filteredGames.map((game) => (
               <GameCard

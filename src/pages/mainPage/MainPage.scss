@@ -1,33 +1,26 @@
-.gameCardBox {
-  position: relative;
-  height: 102%;
+.my-swiper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.profileBox{
+.swiper-slide {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  cursor: pointer;
-  img {
-    width: 32px;
-    height: 32px;
-  }
 }
 
-.shopCardBox {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.gameName {
-  height: 48px;
-}
-
-.profileIcon {
-  cursor: pointer;
-  img {
-    width: 32px;
-    height: 32px;
-  }
+.placeholder {
+  width: 300px;
+  height: 200px;
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  user-select: none;
 }

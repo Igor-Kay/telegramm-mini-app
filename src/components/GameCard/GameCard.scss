@@ -1,0 +1,30 @@
+.gameCardBox {
+    // border: 1px solid rgb(36, 132, 154);
+    border-radius: 32px;
+    // padding: 10px;
+    div {
+      h3 {
+        height: 48px;
+      }
+    }
+  }
+  
+  .price-text {
+    background: rgb(2, 0, 36);
+    background: radial-gradient(
+      circle,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(9, 33, 121, 1) 0%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    border-radius: 6px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+  }
+  
+  .shopCardBoxBtn {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+  }
