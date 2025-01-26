@@ -27,6 +27,10 @@ const Profile = () => {
         <div className="selectPlatformBoxItem">PLayStation 4</div>
         <div className="selectPlatformBoxItem">PLayStation 5</div>
       </div>
+
+      <p>Бот будет составлять каталог и подбирать издания игр под вашу PlayStation</p>
+
+      <h2>Мои подписки</h2>
     </div>
   );
 };

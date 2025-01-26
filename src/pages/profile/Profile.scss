@@ -5,13 +5,14 @@
   }
 
   .inputBoxItem {
+    margin-top: 15px;
     input {
       outline: none;
       border: none;
       border-radius: 15px;
       width: 100%;
       max-width: 500px;
-      background-color: rgb(124, 119, 119);
+      // background-color: rgb(124, 119, 119);
       padding-left: 20px;
       color: white;
       height: 35px;
@@ -34,13 +35,14 @@
     width: 100%;
     max-width: 500px;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
 
     .selectPlatformBoxItem{
         width: 45%;
         height: 150px;
         border: 1px solid gray;
         border-radius: 15px;
+        margin-right: 10px;
         text-align: center;
     }
   }

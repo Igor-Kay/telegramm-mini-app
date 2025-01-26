@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import axios from "axios";
@@ -7,8 +7,13 @@ import { Link, useNavigate } from "react-router-dom";
 import GameCard from "../../components/GameCard/GameCard";
 import Slider from "../../components/Slider/Slider";
 import "./MainPage.scss";
+import ShopCardIcon from "../../assets/shop-card.svg";
+import Profile from "../../assets/profile.svg";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const MainPage = ({ cart, setCart }) => {
+  const searchBarBoxRef = useRef(null);
   const [activeTab, setActiveTab] = useState("games");
   const [searchQuery, setSearchQuery] = useState("");
   const [games, setGames] = useState([]);
@@ -16,8 +21,10 @@ const MainPage = ({ cart, setCart }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [exchangeRate, setExchangeRate] = useState(null);
+  gsap.registerPlugin(ScrollTrigger);
 
   const navigate = useNavigate();
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -84,22 +91,43 @@ const MainPage = ({ cart, setCart }) => {
               <img src={ProfileIcon} alt="Профиль" />
             </div>
           </Link>
-          <button onClick={() => navigate("/cart")} className="cart-btn">
+          {/* <button onClick={() => navigate("/cart")} className="cart-btn">
             Корзина ({cart.length})
-          </button>
+          </button> */}
         </div>
       </div>
 
-      <div className="relative mb-6">
-        <input
-          type="text"
-          placeholder="Я ищу..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full px-4 py-3 pl-10 rounded-lg bg-white border border-gray-200"
-        />
-        <Search className="absolute left-3 top-3.5 text-gray-400" size={20} />
+      <div className="searchBarBox">
+        <div className="searchBar">
+          <input
+            type="text"
+            placeholder="Найти игру или подписку"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full px-4 py-3 pl-10 rounded-lg bg-white border border-gray-200"
+          />
+          <Search className="absolute left-3 top-3 text-gray-400" size={20} />
+        </div>
+        <Link to="/cart">
+          <div className="shop-card">
+            <img src={ShopCardIcon} />
+          </div>
+        </Link>
+        <Link to="/profile">
+          <div className="shop-card">
+            <img src={Profile} />
+          </div>
+        </Link>
       </div>
+
+      
+      <Slider
+        games={filteredGames}
+        exchangeRate={exchangeRate}
+        addToCart={addToCart}
+        cart={cart}
+        preview={true}
+      />
 
       <Slider
         games={filteredGames}

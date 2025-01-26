@@ -1,7 +1,51 @@
+.searchBarBox {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  .searchBar {
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 36px;
+
+    input {
+      border-radius: 36px;
+      height: 42px;
+
+      &:focus-visible {
+        // border: none;
+        outline: none;
+      }
+    }
+  }
+
+  .shop-card {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 16px;
+    background: #fff;
+    padding: 0 !important;
+    background: color(display-p3 1 1 1);
+    margin-left: 8px;
+
+   
+
+    img{
+      width: 20px !important;
+      height: 20px !important;
+      // object-fit: cover;
+    }
+  }
+}
+
 .my-swiper {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  // max-width: 600px;
+  margin-bottom: 30px;
 }
 
 .swiper-slide {
