@@ -20,8 +20,9 @@
     }
   }
 
-  .user_name{ 
-    color: white;
+  .user_name{
+    position: right;
+    display: inline-block;
       .user_avatar{
         background-color: black;
         top: 0;
