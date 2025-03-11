@@ -20,16 +20,23 @@
     }
   }
 
-  .user_name{
-    position: right;
-    display: inline-block;
-      .user_avatar{
-        background-color: black;
-        top: 0;
-        position: right;
-        border-radius: 10%;
-      }
+  .user_info {
+    display: inline-flex;
+    float: inline-end;
+    margin-top: -7.8%;
   }
+
+  .user_name {
+    margin-top: 50%;
+  }
+
+  .user_avatar{
+    background-color: black;
+    border-radius: 20%;
+    width: 65px;
+    height: 60px;
+  }
+
 
   p {
     margin-top: 15px;
