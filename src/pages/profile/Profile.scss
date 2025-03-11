@@ -1,8 +1,9 @@
 .profile-box {
-  h1 {
-    font-size: large;
-    margin-bottom: 25px;
-  }
+  display: flex;
+    h1 {
+      font-size: large;
+      margin-bottom: 25px;
+    }
 
   .inputBoxItem {
     margin-top: 15px;
@@ -22,7 +23,7 @@
 
   .user_avatar{
     background-color: black;
-    float: right;
+    position: right;
     border-radius: 10%;
   }
 
