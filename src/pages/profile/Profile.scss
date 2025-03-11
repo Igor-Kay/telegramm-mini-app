@@ -20,10 +20,14 @@
     }
   }
 
-  .user_avatar{
-    background-color: black;
-    position: right;
-    border-radius: 10%;
+  .user_name{ 
+    color: white;
+      .user_avatar{
+        background-color: black;
+        top: 0;
+        position: right;
+        border-radius: 10%;
+      }
   }
 
   p {
