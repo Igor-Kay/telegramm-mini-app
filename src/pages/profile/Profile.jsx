@@ -4,11 +4,6 @@ import "./Profile.scss";
 const Profile = () => {
   return (
     <div className="max-w-2xl mx-auto p-4 bg-gray-50 profile-box">
-      <Link to="./">
-        <div className="profileBox">
-          <p>Back</p>
-        </div>
-      </Link>
       <img className="user_avatar" src="./" alt="avatar"/><h1>Личный кабинет {username}</h1>
       <div className="inputBoxItem">
         <h3>Логин в PayStation</h3>
