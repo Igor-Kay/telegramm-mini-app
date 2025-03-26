@@ -24,10 +24,10 @@ const Profile = () => {
 
           <select name="_select_platform" id="_select_platform">
             <option value="">Выбрать платформу</option>
-              <div className="selectPlatformBox">
+              {/*<div className="selectPlatformBox">*/}
                 <option value="_ps5"> {/*  <div className="selectPlatformBoxItem">*/}PS4{/*</div>*/}</option>
                 <option value="_ps4">{/*<div className="selectPlatformBoxItem">*/}PS5{/*</div>*/}</option>
-              </div>
+              {/*</div>*/}
           </select>
         </form> 
       <p>Бот будет составлять каталог и подбирать издания игр под вашу PlayStation</p>
