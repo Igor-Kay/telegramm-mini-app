@@ -11,12 +11,12 @@ const Profile = () => {
         <form action="" method="post">
 
           <div className="inputBoxItem">
-            <h3>Логин в PS</h3>
+            <h3>Логин в PSN</h3>
               <input type="text" id="user_email" placeholder="Введите e-mail от турецкого аккаунта" />
           </div>
 
           <div className="inputBoxItem">
-            <h3>Пароль в PS</h3>
+            <h3>Пароль в PSN</h3>
               <input type="text" id="user_password" placeholder="Введите пароль от турецкого аккаунта" />
           </div>
 

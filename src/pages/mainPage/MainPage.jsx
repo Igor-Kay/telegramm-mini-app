@@ -25,7 +25,15 @@ const MainPage = ({ cart, setCart }) => {
 
   const navigate = useNavigate();
 
+  <>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    
+    <script>
+      let tg = window.Telegram.WebApp;
 
+      tg.expand();
+    </script>
+  </>
   useEffect(() => {
     const fetchData = async () => {
       try {
