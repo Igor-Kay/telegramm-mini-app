@@ -58,9 +58,6 @@ const MainPage = ({ cart, setCart }) => {
     fetchData();
     fetchExchangeRate();
 
-    const intervalId = setInterval(fetchData, 5000);
-
-    return () => clearInterval(intervalId);
   }, []);
 
   const filteredGames = games.filter((game) =>
