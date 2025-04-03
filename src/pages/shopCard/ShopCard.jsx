@@ -7,7 +7,8 @@ const ShopCard = ({ cart, removeFromCart }) => {
   return (
     <div className="shop-card">
       <div className="shop-card-header">
-        <h2>Корзина</h2>
+        <a class="_back" href="./">Назад</a>
+          <h2>Корзина</h2>
         <span className="total-price">{totalPrice} ₽</span>
       </div>
 
